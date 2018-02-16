@@ -11,4 +11,17 @@ class Album
 
   end
 
+  def save()
+    sql = "INSERT INTO albums(
+    title,
+    quantity
+    )
+    VALUES(
+      $1,$2
+      ) RETURNING *;"
+      values = [@title, @quantity]
+      album_info = SqlRunner.run(sql, values)
+      @id = album_info.first()['id'].to_i
+  end
+
 end
