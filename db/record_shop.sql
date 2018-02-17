@@ -9,6 +9,6 @@ DROP TABLE IF EXISTS albums;
 CREATE TABLE albums(
   id SERIAL PRIMARY KEY,
   title VARCHAR(255),
-  quantity INT2,
+  quantity INT2
   -- artist_id INT REFERENCES artists(id)
 );
