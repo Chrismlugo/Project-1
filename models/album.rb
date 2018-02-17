@@ -24,6 +24,19 @@ class Album
       @id = album_info.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE albums SET(
+    title,
+    quantitiy
+    ) =
+    (
+      $1,$2
+    ) WHERE id = $3
+    "
+    values = [@title, @quantity]
+    SqlRunner.run(sql, values)
+  end
+
   def self.all()
     sql = "SELECT  * FROM albums;"
     albums = SqlRunner.run(sql)
