@@ -20,4 +20,18 @@ class Artist
       @id = artist.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE artists SET (name) VALUES($1) WHERE id = $2"
+    values = [@name, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def find(id)
+    sql = "SELECT * FROM artists WHERE id = $1"
+    values = [id]
+    artist = SqlRunner.run(sql, values)
+    result = Artist.new(album)[0]
+
+  end
+
 end

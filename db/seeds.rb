@@ -1,4 +1,5 @@
 require_relative('../models/album.rb')
+require('pry-byebug')
 
 Album.delete_all
 
@@ -14,3 +15,7 @@ album1 = Album.new({
 
     album1.save()
     album2.save()
+
+    binding.pry()
+
+    nil
