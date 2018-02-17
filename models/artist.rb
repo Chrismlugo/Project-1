@@ -21,17 +21,36 @@ class Artist
   end
 
   def update()
-    sql = "UPDATE artists SET (name) VALUES($1) WHERE id = $2"
+    sql = "UPDATE artists SET (name) VALUES($1) WHERE id = $2;"
     values = [@name, @id]
     SqlRunner.run(sql, values)
   end
 
-  def find(id)
-    sql = "SELECT * FROM artists WHERE id = $1"
+  def self.find(id)
+    sql = "SELECT * FROM artists WHERE id = $1;"
     values = [id]
     artist = SqlRunner.run(sql, values)
     result = Artist.new(album)[0]
-
+    return result
   end
 
+  def delete()
+    sql = "DELETE FROM artists WHERE id = $1;"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM artists;"
+    values = [@name, @id]
+    artists = SqlRunner.run(sql, values)
+    result = artists.map{|artist| Artist.new(artist)}
+    return result
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM artists;"
+    SqlRunner.run(sql)
+
+  end
 end
