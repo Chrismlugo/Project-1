@@ -1,0 +1,10 @@
+<p>Inventory</p>
+
+<% @albums.each do |album| %>
+
+<p>Title: <%= album.title() %></p>
+<p>quantity: <%= album.quantity %></p>
+
+<p><a href="/albums/<%= album.id%>">Show album</a></p>
+
+<% end %>
