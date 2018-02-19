@@ -1,1 +1,10 @@
-<form action="/albums"></form>
+<form method="POST" action="/albums">
+
+  <label for="title">title:</label>
+  <input type="text" name="title" id="title"/>
+
+  <label for="quantity">quantity</label>
+  <input type="number" name="quantity" id="quantity">
+
+  <input type="submit" value="add to inventory"/>
+</form>
