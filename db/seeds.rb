@@ -21,11 +21,6 @@ artist1 = Artist.new({
     })
     artist3.save()
 
-  artist4 = Artist.new({
-    'name' => 'Jamiroquai'
-    })
-    artist4.save()
-
     album1 = Album.new({
       'title' => 'A Hard Road',
       'quantity' => 5,

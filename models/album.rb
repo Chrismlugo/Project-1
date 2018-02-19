@@ -29,14 +29,14 @@ class Album
   def update()
     sql = "UPDATE albums SET(
     title,
-    quantitiy,
+    quantity,
     artist_id
     ) =
     (
       $1,$2,$3
     ) WHERE id = $4;
     "
-    values = [@title, @quantity, @artist_id]
+    values = [@title, @quantity, @artist_id, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -60,7 +60,7 @@ class Album
     result = albums.map{|album| Album.new(album)}
     return result
   end
-  #
+
   def stock_level()
     if @quantity == 0
       return "Out of Stock"

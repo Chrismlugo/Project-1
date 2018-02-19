@@ -35,7 +35,6 @@ post "/albums/:id" do
 album = Album.new(params)
 album.update()
 redirect to ("/inventory")
-erb(:"albums/update")
 end
 
 #new
