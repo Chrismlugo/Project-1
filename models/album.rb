@@ -60,6 +60,20 @@ class Album
     result = albums.map{|album| Album.new(album)}
     return result
   end
+  #
+  def stock_level()
+    if @quantity == 0
+      return "Out of Stock"
+    elsif @quantity < 5
+      return "Stock Low"
+    elsif  @quantity >= 5
+      return "In stock"
+    elsif @quantity > 10
+      return "Fully Stocked"
+    end
+  end
+
+
 
   def self.delete_all()
     sql = "DELETE FROM albums;"

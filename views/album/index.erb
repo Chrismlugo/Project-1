@@ -1,0 +1,11 @@
+<h2>Albums</h2>
+
+<% @albums.each do |album|%>
+
+<%= Artist.find(album.artist_id).name()%>
+
+<%= album.title %>
+
+<%= album.quantity %>
+
+<% end %>

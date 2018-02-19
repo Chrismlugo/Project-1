@@ -4,7 +4,6 @@ DROP TABLE IF EXISTS artists;
 CREATE TABLE artists(
   id SERIAL PRIMARY KEY,
   name VARCHAR(255)
-  -- album_id INT REFERENCES albums(id) ON DELETE CASCADE
 );
 
 CREATE TABLE albums(

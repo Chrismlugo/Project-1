@@ -37,15 +37,15 @@ class Artist
     return result
   end
 
-  def name()
-    def self.find(name)
+
+    def self.name(name)
       sql = "SELECT * FROM artists WHERE name = $1;"
       values = [@name]
       artist = SqlRunner.run(sql, values)
       result = Artist.new(artist.first())
       return result
     end
-  end
+
 
   def albums()
     sql = "SELECT * FROM albums WHERE artist_id = $1"

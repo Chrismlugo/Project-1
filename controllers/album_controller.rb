@@ -14,15 +14,14 @@ end
 get "/albums" do
   @album = Album.new(params)
   @album.save()
-  erb(:"albums/create")
+  redirect to ("/inventory")
 end
 
 #delete
 post "/albums/:id/delete" do
   @album = Album.find(params['id'])
   @album.delete()
-  redirect to ("/albums")
-  erb(:"albums/delete")
+  redirect to ("/inventory")
 end
 
 #edit
@@ -35,6 +34,7 @@ end
 post "/albums/:id" do
 album = Album.new(params)
 album.update()
+redirect to ("/inventory")
 erb(:"albums/update")
 end
 

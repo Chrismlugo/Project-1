@@ -11,10 +11,11 @@ get "/artists" do
 end
 
 #create
-get "/albums" do
-  @album = Album.new(params)
+post "/artists" do
+  @album = Artist.new(params)
   @album.save()
-  erb(:"albums/create")
+  redirect to ("/inventory")
+  erb(:"artists/create")
 end
 
 #delete

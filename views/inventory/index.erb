@@ -2,11 +2,13 @@
 
 <% @albums.each do |album| %>
 
-<p><%=Artist.find(album.artist_id).name%></p>
+<p><%= Artist.find(album.artist_id).name() %></p>
 <p>Title: <%= album.title() %></p>
 <p>quantity: <%= album.quantity %></p>
+<p class= stock_level><%=album.stock_level()%></p>
 
-
-<p><a href="/albums/<%= album.id%>">album info</a></p>
+<a href="/inventory/<%=album.id%>/edit">update</a>
 
 <% end %>
+
+<p><a href="/inventory/new">Add to inventory</a></p>
