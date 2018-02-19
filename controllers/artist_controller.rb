@@ -10,6 +10,40 @@ get "/artists" do
   erb(:"artists/index")
 end
 
+#create
+get "/albums" do
+  @album = Album.new(params)
+  @album.save()
+  erb(:"albums/create")
+end
+
+#delete
+post "/artists/:id/delete" do
+  @artist = Artist.find(params['id'])
+  @artist.delete()
+  redirect to ("/artists")
+  erb(:"artists/delete")
+end
+
+#edit
+get "/artists/:id/edit" do
+  @artist = Artist.find(params['id'])
+  erb(:"artists/edit")
+end
+
+#update
+post "/artists/:id" do
+artist = Artist.new(params)
+artist.update()
+erb(:"artists/update")
+end
+
+#new
+get "/artists/new" do
+  erb(:"artists/new")
+end
+
+
 #show
 get "/artists/:id" do
   @artist = Artist.find(params['id'].to_i)

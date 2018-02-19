@@ -1,6 +1,6 @@
 
 
-body {
+/* body {
   background: rgb(81, 96, 88);
   background-repeat: no-repeat;
   background-size: 100%;
@@ -19,6 +19,8 @@ h1{
 }
 
 p{
+  display:flex;
+  flex-direction: row;
   color: rgb(10, 230, 203);
 }
 
@@ -27,4 +29,4 @@ li {
   flex-direction: row;
   text-decoration: none;
   text-align: center;
-}
+} */
