@@ -12,10 +12,14 @@ end
 
 #create
 post "/artists" do
-  @album = Artist.new(params)
-  @album.save()
-  redirect to ("/inventory")
+  @artist = Artist.new(params)
+  @artist.save()
   erb(:"artists/create")
+end
+
+#new
+get "/artists/new" do
+  erb(:"artists/new")
 end
 
 #delete
@@ -32,17 +36,14 @@ get "/artists/:id/edit" do
   erb(:"artists/edit")
 end
 
-#update
-post "/artists/:id" do
-artist = Artist.new(params)
-artist.update()
-erb(:"artists/update")
-end
+# #update
+# post "/artists/:id" do
+# artist = Artist.new(params)
+# artist.update()
+# erb(:"artists/update")
+# end
 
-#new
-get "/artists/new" do
-  erb(:"artists/new")
-end
+
 
 
 #show

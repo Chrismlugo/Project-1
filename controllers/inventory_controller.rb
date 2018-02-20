@@ -12,49 +12,29 @@ get "/inventory" do
 erb(:"/inventory/index")
 end
 
-#create new album
+#create new artist
 post "/inventory" do
+  @artist = Artist.new(params)
+  @artist.save()
+  erb(:"inventory/create-artist")
+end
+
+#create new album
+post "/inventory/new-album" do
   @album = Album.new(params)
   @album.save()
   redirect to ("/inventory")
 end
 
-#create new artist
-post "/inventory" do
-  @artist = Artist.new(params)
-  @artist.save()
-  redirect to ("/inventory")
-end
-
-#new_album
-get "/inventory/new-album" do
-  @artists = Artist.all()
-  erb(:"inventory/new-album")
-end
-
-#new_artist
-get "/inventory" do
-  erb(:"inventory/new-artist")
-end
-
-
-#show_album
-get "/inventory/:id" do
-@album = Album.find(params['id'].to_i)
-erb(:"/inventory/show")
-end
-
-#edit
+#edit album
 get "/inventory/:id/edit" do
   @album = Album.find(params['id'].to_i)
   erb(:"/inventory/edit")
 end
 
-#update_album -  need to find a way to update whilst keeping the artist_id
+#update_album
 post "/inventory/:id" do
   @album = Album.update(params)
-  # album = Album.new(params)
-  # album.update()
   redirect to(:"/inventory")
 
 end
@@ -64,5 +44,22 @@ get "/inventory/:id/delete" do
   @album = Album.find(params['id'])
   @album.delete()
   redirect to(:"/inventory")
+end
 
+
+#new_album
+get "/inventory/new-album" do
+  @artists = Artist.all()
+  erb(:"inventory/new-album")
+end
+
+#new_artist
+get "/inventory/new-artist" do
+  erb(:"inventory/new-artist")
+end
+
+#show_album
+get "/inventory/:id" do
+@album = Album.find(params['id'].to_i)
+erb(:"/inventory/show")
 end
