@@ -12,17 +12,31 @@ get "/inventory" do
 erb(:"/inventory/index")
 end
 
-#create_album
+#create new album
 post "/inventory" do
   @album = Album.new(params)
   @album.save()
   redirect to ("/inventory")
 end
 
-#new_album
-get "/inventory/new" do
-  erb(:"inventory/new")
+#create new artist
+post "/inventory" do
+  @artist = Artist.new(params)
+  @artist.save()
+  redirect to ("/inventory")
 end
+
+#new_album
+get "/inventory/new-album" do
+  @artists = Artist.all()
+  erb(:"inventory/new-album")
+end
+
+#new_artist
+get "/inventory" do
+  erb(:"inventory/new-artist")
+end
+
 
 #show_album
 get "/inventory/:id" do
