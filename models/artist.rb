@@ -38,9 +38,9 @@ class Artist
   end
 
 
-    def self.name(name)
+    def self.artist_name(name)
       sql = "SELECT * FROM artists WHERE name = $1;"
-      values = [@name]
+      values = [name]
       artist = SqlRunner.run(sql, values)
       result = Artist.new(artist.first())
       return result

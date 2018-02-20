@@ -12,7 +12,7 @@ get "/inventory" do
 erb(:"/inventory/index")
 end
 
-#create
+#create_album
 post "/inventory" do
   @album = Album.new(params)
   @album.save()
@@ -21,7 +21,7 @@ end
 
 #new_album
 get "/inventory/new" do
-  erb(:"inventory/new/album")
+  erb(:"inventory/new")
 end
 
 #show_album
@@ -36,12 +36,19 @@ get "/inventory/:id/edit" do
   erb(:"/inventory/edit")
 end
 
-#update
+#update_album -  need to find a way to update whilst keeping the artist_id
 post "/inventory/:id" do
-  album = Album.new(params)
-  album.update()
+  @album = Album.update(params)
+  # album = Album.new(params)
+  # album.update()
   redirect to(:"/inventory")
 
 end
 
-#delete
+#delete_album
+get "/inventory/:id/delete" do
+  @album = Album.find(params['id'])
+  @album.delete()
+  redirect to(:"/inventory")
+
+end

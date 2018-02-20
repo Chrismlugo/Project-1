@@ -1,14 +1,19 @@
 <h1>Inventory</h1>
 
+<div class="container">
+
 <% @albums.each do |album| %>
 
-<p><%= Artist.find(album.artist_id).name() %></p>
-<p>Title: <%= album.title() %></p>
-<p>quantity: <%= album.quantity %></p>
-<p class= stock_level><%=album.stock_level()%></p>
+<p class= "inventory"><%= Artist.find(album.artist_id).name() %></p>
+<p class= "inventory">Title: <%= album.title() %></p>
+<p class= "inventory">quantity: <%= album.quantity %></p>
+<p class= "inventory"><%=album.stock_level()%></p>
 
-<a href="/inventory/<%=album.id%>/edit">update</a>
+
+<a class="button" href="/inventory/<%=album.id%>/edit">update</a>
+<a class="button" href="/inventory/<%=album.id%>/delete">delete</a>
 
 <% end %>
 
-<p><a href="/inventory/new">Add to inventory</a></p>
+<p class= "inventory"><a  href="/inventory/new">Add to inventory</a></p>
+</div>

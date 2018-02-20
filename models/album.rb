@@ -17,11 +17,12 @@ class Album
     title,
     quantity,
     artist_id
+
     )
     VALUES(
       $1,$2,$3
       ) RETURNING *;"
-      values = [@title, @quantity,@artist_id]
+      values = [@title, @quantity, @artist_id]
       album_info = SqlRunner.run(sql, values)
       @id = album_info.first()['id'].to_i
   end
@@ -31,6 +32,7 @@ class Album
     title,
     quantity,
     artist_id
+
     ) =
     (
       $1,$2,$3
@@ -38,6 +40,15 @@ class Album
     "
     values = [@title, @quantity, @artist_id, @id]
     SqlRunner.run(sql, values)
+  end
+
+  def self.update(options)
+    sql = "UPDATE albums SET
+    title = '#{options['title']}',
+    quantity = '#{options['quantity']}',
+    artist_id = '#{options['artist_id']}' WHERE id = '#{options['id']}';
+    "
+    SqlRunner.run(sql);
   end
 
   def self.find(id)
@@ -68,8 +79,8 @@ class Album
       return "Stock Low"
     elsif  @quantity >= 5
       return "In stock"
-    elsif @quantity > 10
-      return "Fully Stocked"
+    elsif @quantity == 10
+      return "stock high"
     end
   end
 
