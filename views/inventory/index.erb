@@ -1,19 +1,22 @@
-<h1>Inventory</h1>
+<header class="inventory"><h1 class= "inventory">Inventory</h1></header>
 
-<div class="container">
+
 
 <% @albums.each do |album| %>
-
-<p class= "inventory"><%= Artist.find(album.artist_id).name() %></p>
-<p class= "inventory">Title: <%= album.title() %></p>
-<p class= "inventory">quantity: <%= album.quantity %></p>
-<p class= "inventory"><%=album.stock_level()%></p>
-
-
-<a class="button" href="/inventory/<%=album.id%>/edit">update</a>
-<a class="button" href="/inventory/<%=album.id%>/delete">delete</a>
-
+<table style="width:50%">
+  <tr>
+<th>Artist</th>
+<th>Title</th>
+<th>quantity</th>
+<th>Stock Level</th>
+</tr>
+<tr>
+  <td class= "table"><%= Artist.find(album.artist_id).name() %></td>
+  <td class= "table"><%= album.title() %></td>
+  <td class= "table"><%= album.quantity %></td>
+  <td class= "table"><%=album.stock_level()%></td>
+<td class="special"><a class="button" href="/inventory/<%=album.id%>/edit">update</a></td>
+<td class="special"><a href="/inventory/<%=album.id%>/delete">delete</a></td>
+</tr>
+</table>
 <% end %>
-
-
-</div>

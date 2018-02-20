@@ -12,12 +12,7 @@ get "/inventory" do
 erb(:"/inventory/index")
 end
 
-#create new artist
-post "/inventory" do
-  @artist = Artist.new(params)
-  @artist.save()
-  erb(:"inventory/create-artist")
-end
+
 
 #create new album
 post "/inventory/new-album" do
@@ -53,10 +48,10 @@ get "/inventory/new-album" do
   erb(:"inventory/new-album")
 end
 
-#new_artist
-get "/inventory/new-artist" do
-  erb(:"inventory/new-artist")
-end
+# #new_artist
+# get "/inventory/new-artist" do
+#   erb(:"inventory/new-artist")
+# end
 
 #show_album
 get "/inventory/:id" do

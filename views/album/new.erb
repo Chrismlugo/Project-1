@@ -1,9 +1,19 @@
-<form action="/inventory" method="post">
+<form action="/albums" method="post">
   <label for="title">title:</label>
   <input type="text" name="title" id="title"/>
 
   <label for="quantity">quantity</label>
   <input type="number" name="quantity" id="quantity">
+
+  <label for="artist">Artist</label>
+  <select class="" name="artist_id">
+    <% for artist in @artists %>
+    <option value="<%= artist.id %>">
+      <%= artist.name %></option>
+      <% end %>
+  </select>
+
+
 
   <input type="submit" value="add album"/>
 </form>

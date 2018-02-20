@@ -1,10 +1,33 @@
-/* body {
-  background-color: rgb(0, 0, 0);
-  background-repeat: no-repeat;
+
+body {
+  background-color: rgba(162, 30, 30, 0.98);
   padding: 0;
   margin: 0;
 }
 
+header{
+  display:flex;
+  background: url("/images/vinyl_2.jpg");
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+
+header.inventory{
+  display: flex;
+  justify-content: flex-start;
+
+}
+
+h1.inventory{
+  color: rgb(87, 54, 42)
+}
+
+nav{
+  display:table;
+  flex-direction: column-reverse;
+  align-content: space-around;
+}
 h1{
   font-family: 'Rokkit', serif;
   display:flex;
@@ -24,18 +47,89 @@ p{
   font-size: 40px;
 }
 
-p.inventory{
+
+/* p.inventory{
   display: flex;
-  justify-content: space-between;
-  font-family: sans-serif;
-  font-size: 18px;
+  justify-content: flex-start;
+  font-size: 20px;
+  margin: 5%;
+
+} */
+
+
+
+li{
+  display: flex;
+  flex-direction: row;
+  padding: 5%;
+  margin: 1%;
 
 }
 
 a{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-between;
   text-decoration: none;
+
 }
 
-label{
-  color: white;
-} */
+a:link{
+  color: rgb(255, 255, 255);
+}
+
+a:visited{
+  color: rgb(13, 180, 180);
+}
+
+a:hover{
+  color: rgb(62, 218, 218);
+}
+
+a:active{
+  color: rgb(87, 11, 162);
+}
+
+label.hidden{
+  display:none;
+}
+input.hidden{
+  display: none;
+}
+
+a.button{
+ display:inline-block;
+ font-size: 22px;
+ padding: 10px;
+}
+
+table{
+  padding: 20px;
+  margin: 10px;
+}
+
+table,th,td{
+  border: 1px solid black;
+  border-spacing: inherit;
+  border-collapse: collapse;
+}
+
+th,td{
+  padding: 5px;
+}
+
+td{
+  background-color: white;
+  text-align: center;
+  color: black;
+}
+
+td.special{
+  border-style: hidden;
+  background-color: rgba(162, 30, 30, 0.98);
+}
+
+div.link_bar{
+  background-color: rgb(85, 41, 0);
+}

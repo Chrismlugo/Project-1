@@ -77,10 +77,10 @@ class Album
       return "Out of Stock"
     elsif @quantity < 5
       return "Stock Low"
+    elsif @quantity >= 10
+      return "Stock High"
     elsif  @quantity >= 5
       return "In stock"
-    elsif @quantity == 10
-      return "stock high"
     end
   end
 
