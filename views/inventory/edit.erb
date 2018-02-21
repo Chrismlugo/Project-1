@@ -2,14 +2,14 @@
 
 <form action="/inventory/<%=@album.id%>" method="post">
 
-  <label for="artist">artist</label>
+  <label for="artist">artist:</label>
   <input type="text" name="artist" value="<%=Artist.find(@album.artist_id).name()%>">
 
 
-<label for="title">title</label>
+<label for="title">album title:</label>
 <input type="title" name="title" id="title" value="<%=@album.title%>">
 
-<label for="quantity">quantity</label>
+<label for="quantity">quantity:</label>
 <input type="number" name="quantity" value="<%=@album.quantity%>">
 
 <label class="hidden" for="artist_id">artist_id</label>

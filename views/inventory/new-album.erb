@@ -1,11 +1,11 @@
 <form action="/inventory/new-album" method="post">
-  <label for="title">title:</label>
+  <label for="title">album title:</label>
   <input type="text" name="title" id="title"/>
 
-  <label for="quantity">quantity</label>
+  <label for="quantity">quantity:</label>
   <input type="number" name="quantity" id="quantity">
 
-  <label for="artist">Artist</label>
+  <label for="artist">Artist:</label>
   <select class="" name="artist_id">
     <% for artist in @artists %>
     <option value="<%= artist.id %>">

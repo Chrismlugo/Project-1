@@ -26,13 +26,15 @@ header.inventory{
 }
 
 h1.inventory{
-  color: rgb(40, 68, 68);
-  font-family:'Rokkit', serif;
+  letter-spacing: normal;
+  color: rgb(13, 180, 180);
+  font-family:'Oswald', sans-serif;
 }
 
 
 h1{
-  font-family: 'Rokkit', serif;
+  letter-spacing: 0.5em;
+  font-family: 'Oswald', sans-serif;
   display:flex;
   justify-content: center;
   color:rgb(13, 180, 180);
@@ -47,8 +49,11 @@ p{
   font-size: 40px;
 }
 
+
+
 ul{
   background-color: darkslategrey;
+  border-bottom: solid;
   display: flex;
   flex-direction: row;
   margin: 0;
@@ -85,13 +90,6 @@ a:active{
   color: rgb(87, 11, 162);
 }
 
-label.hidden{
-  display:none;
-}
-input.hidden{
-  display: none;
-}
-
 .button {
   text-decoration: none;
   background-color: #f1ebeb;
@@ -100,6 +98,8 @@ input.hidden{
   border-right: 1px solid #333333;
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;
+  border-radius: 5px;
+  padding: 10px 20px;
 
 }
 
@@ -110,7 +110,10 @@ a.button{
  font-size: 22px;
  padding: 10px;
 
+
 }
+
+/* styles for inventory tables */
 
 table{
   padding: 20px;
@@ -147,8 +150,68 @@ td.special{
     font-size: 20px;
 }
 
+/* forms */
+
+label.hidden{
+  display:none;
+}
+input.hidden{
+  display: none;
+}
+
 label{
   display:inline-block;
+  font-size: 20px;
   color: rgb(255, 255, 255);
   font-family: sans-serif;
+}
+
+input[type=text]{
+  font-size: 15px;
+  width: 10%;
+  padding: 5px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(159, 164, 164)
+}
+
+input[type= submit]{
+  background-color: #3a7a46;
+    border: 1px solid black;
+    border-radius: 4px;
+    color: white;
+    padding: 10px 20px;
+    margin: 5%;
+    text-decoration: none;
+    cursor: pointer
+}
+
+input[type= number]{
+  font-size: 15px;
+  width: 10%;
+  padding: 5px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(159, 164, 164)
+}
+
+select{
+  width: 20%;
+  padding: 5% 10px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(159, 164, 164);
+}
+
+/* create page link to add stock */
+
+a.new-album{
+  background-color: #b9b3ad;
+    color: rgb(2, 103, 117);
+    border-radius: 4px;
+
+
 }
