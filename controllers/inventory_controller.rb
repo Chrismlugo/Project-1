@@ -12,8 +12,6 @@ get "/inventory" do
 erb(:"/inventory/index")
 end
 
-
-
 #create new album
 post "/inventory/new-album" do
   @album = Album.new(params)

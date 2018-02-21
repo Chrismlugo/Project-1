@@ -6,73 +6,67 @@ body {
 }
 
 header{
+  border-top: solid;
+  border-bottom: solid;
+  background-color:rgb(68, 79, 66);
   display:flex;
-  background: url("/images/vinyl_2.jpg");
-  background-size: cover;
+  justify-content: center;
   margin: 0;
   padding: 0;
 }
 
 header.inventory{
+  background: url("/images/vinyl_2.jpg");
+  background-size: cover;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: flex-start;
 
 }
 
 h1.inventory{
-  color: rgb(87, 54, 42)
+  color: rgb(40, 68, 68);
+  font-family:'Rokkit', serif;
 }
 
-nav{
-  display:table;
-  flex-direction: column-reverse;
-  align-content: space-around;
-}
+
 h1{
   font-family: 'Rokkit', serif;
   display:flex;
   justify-content: center;
-  text-shadow: -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
   color:rgb(13, 180, 180);
   font-size: 60px;
 }
 
 p{
   display: flex;
+  font-family:'Rubik' , sans-serif;
   justify-content: center;
   color: white;
   font-size: 40px;
 }
 
-
-/* p.inventory{
+ul{
+  background-color: darkslategrey;
   display: flex;
-  justify-content: flex-start;
-  font-size: 20px;
-  margin: 5%;
-
-} */
-
-
+  flex-direction: row;
+  margin: 0;
+}
 
 li{
   display: flex;
-  flex-direction: row;
-  padding: 5%;
-  margin: 1%;
-
+  border-right: solid;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 15px;
+  margin: 0;
 }
 
 a{
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: space-between;
+  font-family: 'Rubik', sans-serif;
   text-decoration: none;
-
 }
 
 a:link{
@@ -98,10 +92,24 @@ input.hidden{
   display: none;
 }
 
+.button {
+  text-decoration: none;
+  background-color: #f1ebeb;
+  padding: 1px 3px 1px 3px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+
+}
+
 a.button{
  display:inline-block;
+ font-family: 'Rubik', sans-serif;
+ color: rgb(22, 20, 15);
  font-size: 22px;
  padding: 10px;
+
 }
 
 table{
@@ -119,17 +127,28 @@ th,td{
   padding: 5px;
 }
 
+th{
+  font-family: sans-serif;
+  color: rgb(10, 10, 10);
+}
+
 td{
-  background-color: white;
+  background-color: rgb(177, 187, 203);
+  font-family: sans-serif;
   text-align: center;
   color: black;
 }
 
 td.special{
   border-style: hidden;
-  background-color: rgba(162, 30, 30, 0.98);
+  font-family: sans-serif;
+    background-color: rgba(162, 30, 30, 0.98);
+    text-align: justify;
+    font-size: 20px;
 }
 
-div.link_bar{
-  background-color: rgb(85, 41, 0);
+label{
+  display:inline-block;
+  color: rgb(255, 255, 255);
+  font-family: sans-serif;
 }
